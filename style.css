@@ -1,0 +1,330 @@
+/* ===== RESET E FONTES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap');
+
+/* ===== VARIÁVEIS ===== */
+:root {
+    --terminal-green: #33ff33;
+    --terminal-green-dim: #1a8c1a;
+    --terminal-bg: #000000;
+    --terminal-border: #0a3d0a;
+    
+    /* Cores das Corporações */
+    --corp-bear: #ff6b6b;
+    --corp-polytechnica: #4ecdc4;
+    --corp-tiger: #ff9f1c;
+    --corp-asimov: #a8dadc;
+    --corp-anatom: #e63946;
+    --corp-cyanthor: #06ffa5;
+    --corp-idcom: #9d4edd;
+    --corp-corpa: #ffbe0b;
+    --corp-bastech: #3a86ff;
+    --corp-citadel: #8ac926;
+    --corp-archius: #ffd60a;
+    --corp-fennek: #d62828;
+}
+
+/* ===== BODY E BACKGROUND ===== */
+body {
+    background-color: var(--terminal-bg);
+    color: var(--terminal-green);
+    font-family: 'VT323', 'Share Tech Mono', 'Courier New', monospace;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* ===== EFEITO CRT (sutil) ===== */
+.crt-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0.15) 1px,
+            transparent 1px,
+            transparent 2px
+        );
+    animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+    0% { opacity: 0.98; }
+    50% { opacity: 1; }
+    100% { opacity: 0.98; }
+}
+
+/* ===== CONTAINER DO TERMINAL ===== */
+.terminal-container {
+    width: 100%;
+    max-width: 900px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 2px solid var(--terminal-border);
+    border-radius: 8px;
+    box-shadow: 
+        0 0 0 1px rgba(51, 255, 51, 0.1),
+        0 20px 40px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+}
+
+/* ===== HEADER DO TERMINAL ===== */
+.terminal-header {
+    background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--terminal-border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.terminal-dot.red { background-color: #ff5f56; }
+.terminal-dot.yellow { background-color: #ffbd2e; }
+.terminal-dot.green { background-color: #27c93f; }
+
+.terminal-title {
+    margin-left: 10px;
+    font-size: 14px;
+    color: var(--terminal-green-dim);
+    font-family: 'Share Tech Mono', monospace;
+}
+
+/* ===== CORPO DO TERMINAL ===== */
+.terminal-body {
+    background-color: var(--terminal-bg);
+    padding: 30px;
+    min-height: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.terminal-body::-webkit-scrollbar {
+    width: 10px;
+}
+
+.terminal-body::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+    background: var(--terminal-green-dim);
+    border-radius: 5px;
+}
+
+.terminal-body::-webkit-scrollbar-thumb:hover {
+    background: var(--terminal-green);
+}
+
+/* ===== BOOT SCREEN ===== */
+#boot-screen {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boot-sequence {
+    text-align: center;
+}
+
+.ascii-art {
+    font-size: 10px;
+    line-height: 1.2;
+    color: var(--terminal-green);
+    margin-bottom: 20px;
+    font-family: 'VT323', monospace;
+}
+
+.boot-info {
+    margin-top: 30px;
+}
+
+.boot-info p {
+    margin: 10px 0;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.separator {
+    color: var(--terminal-green-dim);
+    margin: 20px 0 !important;
+    opacity: 0.5;
+}
+
+.boot-status {
+    margin-top: 30px !important;
+    font-style: italic;
+    color: var(--terminal-green-dim);
+}
+
+#access-btn {
+    background-color: transparent;
+    color: var(--terminal-green);
+    border: 1px solid var(--terminal-green);
+    padding: 12px 30px;
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: all 0.3s;
+    letter-spacing: 2px;
+}
+
+#access-btn:hover {
+    background-color: var(--terminal-green);
+    color: var(--terminal-bg);
+}
+
+#access-btn:active {
+    transform: scale(0.98);
+}
+
+/* ===== MENSAGENS ===== */
+.message-block {
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.message-header {
+    border-bottom: 1px solid var(--terminal-green-dim);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.message-header div {
+    margin: 5px 0;
+}
+
+.timestamp {
+    color: var(--terminal-green-dim);
+    font-size: 13px;
+    margin-top: 10px !important;
+}
+
+.message-content {
+    font-size: 16px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.message-content p {
+    margin: 15px 0;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 25px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.divider {
+    border-top: 1px dashed var(--terminal-green-dim);
+    margin: 50px 0;
+    opacity: 0.3;
+}
+
+/* ===== CURSOR PISCANDO ===== */
+.cursor-blink {
+    display: inline-block;
+    animation: blink 1s infinite;
+    margin-left: 5px;
+}
+
+@keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+/* ===== CORES DAS CORPORAÇÕES ===== */
+.corp-bear { color: var(--corp-bear); }
+.corp-polytechnica { color: var(--corp-polytechnica); }
+.corp-tiger { color: var(--corp-tiger); }
+.corp-asimov { color: var(--corp-asimov); }
+.corp-anatom { color: var(--corp-anatom); }
+.corp-cyanthor { color: var(--corp-cyanthor); }
+.corp-idcom { color: var(--corp-idcom); }
+.corp-corpa { color: var(--corp-corpa); }
+.corp-bastech { color: var(--corp-bastech); }
+.corp-citadel { color: var(--corp-citadel); }
+.corp-archius { color: var(--corp-archius); }
+.corp-fennek { color: var(--corp-fennek); }
+
+/* ===== UTILIDADES ===== */
+.hidden {
+    display: none !important;
+}
+
+.visible {
+    display: block !important;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .terminal-body {
+        padding: 20px;
+        font-size: 14px;
+    }
+    
+    .ascii-art {
+        font-size: 6px;
+    }
+    
+    .boot-info p {
+        font-size: 14px;
+    }
+    
+    #access-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+    
+    .message-content {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .terminal-body {
+        padding: 15px;
+        font-size: 13px;
+    }
+    
+    .ascii-art {
+        font-size: 5px;
+    }
+}
