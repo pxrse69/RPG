@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.I.E.L.L.A :: TERMINAL SEGURO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="crt-effect"></div>
+    
+    <!-- Tela Inicial -->
+    <div id="boot-screen">
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-title">terminal@niella:~$</span>
+            </div>
+            <div class="terminal-body">
+                <div class="boot-sequence">
+                    <pre class="ascii-art">
+███╗   ██╗   ██╗   ███████╗   ██╗        ██╗        ██╗   
+████╗  ██║   ██║   ██╔════╝   ██║        ██║       ███║   
+██╔██╗ ██║   ██║   █████╗     ██║        ██║       ╚██║   
+██║╚██╗██║   ██║   ██╔══╝     ██║        ██║        ██║   
+██║ ╚████║██╗██║██╗███████╗██╗███████╗██╗███████╗██╗██║██╗
+╚═╝  ╚═══╝╚═╝╚═╝╚═╝╚══════╝╚═╝╚══════╝╚═╝╚══════╝╚═╝╚═╝╚═╝
+                    </pre>
+                    <div class="boot-info">
+                        <p>TERMINAL DE COMUNICAÇÃO CRIPTOGRAFADA</p>
+                        <p>Versão 0.0.3.0 :: Protocolo gH0ST</p>
+                        <p class="separator">════════════════════════════════════════════════</p>
+                        <p class="boot-status" id="boot-status">Inicializando sistemas...</p>
+                    </div>
+                    <button id="access-btn" class="hidden">[PRESSIONE ENTER PARA ACESSAR]</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terminal Principal -->
+    <div id="main-terminal" class="hidden">
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-title">terminal@niella:~$ decrypt --messages</span>
+            </div>
+            <div class="terminal-body">
+                <div id="messages-container">
+                    <!-- Mensagens serão inseridas aqui pelo JavaScript -->
+                </div>
+                <div class="cursor-blink" id="terminal-cursor">█</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
