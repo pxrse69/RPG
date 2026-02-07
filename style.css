@@ -5,11 +5,11 @@
     box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&family=Orbitron:wght@700;900&family=Rajdhani:wght@700&family=Saira+Condensed:wght@700&family=Teko:wght@700&family=Audiowide&family=Exo+2:wght@800&family=Russo+One&family=Electrolize&family=Aldrich&family=Iceland&family=Michroma&display=swap');
 
 /* ===== VARIÁVEIS ===== */
 :root {
-    --terminal-green: #33ff33;
+    --terminal-green: #22dd22;
     --terminal-green-dim: #1a8c1a;
     --terminal-bg: #000000;
     --terminal-border: #0a3d0a;
@@ -267,18 +267,98 @@ body {
 }
 
 /* ===== CORES DAS CORPORAÇÕES ===== */
-.corp-bear { color: var(--corp-bear); }
-.corp-polytechnica { color: var(--corp-polytechnica); }
-.corp-tiger { color: var(--corp-tiger); }
-.corp-asimov { color: var(--corp-asimov); }
-.corp-anatom { color: var(--corp-anatom); }
-.corp-cyanthor { color: var(--corp-cyanthor); }
-.corp-idcom { color: var(--corp-idcom); }
-.corp-corpa { color: var(--corp-corpa); }
-.corp-bastech { color: var(--corp-bastech); }
-.corp-citadel { color: var(--corp-citadel); }
-.corp-archius { color: var(--corp-archius); }
-.corp-fennek { color: var(--corp-fennek); }
+.corp-bear { 
+    color: var(--corp-bear); 
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.corp-polytechnica { 
+    color: var(--corp-polytechnica); 
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+}
+
+.corp-tiger { 
+    color: var(--corp-tiger); 
+    font-family: 'Saira Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 19px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.corp-asimov { 
+    color: var(--corp-asimov); 
+    font-family: 'Audiowide', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+}
+
+.corp-anatom { 
+    color: var(--corp-anatom); 
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+}
+
+.corp-cyanthor { 
+    color: var(--corp-cyanthor); 
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.corp-idcom { 
+    color: var(--corp-idcom); 
+    font-family: 'Electrolize', sans-serif;
+    font-size: 16px;
+    letter-spacing: 3px;
+}
+
+.corp-corpa { 
+    color: var(--corp-corpa); 
+    font-family: 'Russo One', sans-serif;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+.corp-bastech { 
+    color: var(--corp-bastech); 
+    font-family: 'Aldrich', sans-serif;
+    font-size: 17px;
+    letter-spacing: 2px;
+}
+
+.corp-citadel { 
+    color: var(--corp-citadel); 
+    font-family: 'Michroma', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+}
+
+.corp-archius { 
+    color: var(--corp-archius); 
+    font-family: 'Iceland', sans-serif;
+    font-size: 19px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+
+.corp-fennek { 
+    color: var(--corp-fennek); 
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 3px var(--corp-fennek);
+}
 
 /* ===== UTILIDADES ===== */
 .hidden {
